@@ -1,0 +1,59 @@
+Switch>en
+Switch#config t
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch (config)#vlan 10
+Switch (config-vlan)#name Sales
+Switch (config-vlan)#vlan 20
+Switch (config-vlan)#name HR
+Switch (config-vlan)#vlan 30
+Switch (config-vlan)#name Accounts
+Switch (config-vlan)#vlan 40
+Switch (config-vlan)#name Admin
+Switch (config-vlan)#exit
+Switch (config)#
+Switch (config)#interface fa0/1
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 10
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/2
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 10
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/3
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 20
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/4
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 20
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/5
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 30
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/6
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 30
+Switch (config-if)#exit
+Switch (config)#interface fa0/7
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 40
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/8
+Switch (config-if)#switchport mode access
+Switch (config-if)#switchport access vlan 40
+Switch (config-if)#exit
+Switch (config)#
+Switch (config)#interface fa0/0
+Invalid interface type and number
+Switch (config)#interface fa0/24
+Switch (config-if)#switchport mode Trunk
+Switch (config-if)#switchport trunk allowed vlan 10,20,30,40
+Switch (config-if)#exit
+Switch (config)#

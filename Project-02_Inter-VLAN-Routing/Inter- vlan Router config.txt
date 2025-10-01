@@ -1,0 +1,25 @@
+Router>en
+Router#config t
+Enter configuration commands, one per line. End with CNTL/Z.
+Router (config)#interface g0/0.10
+Router (config-subif)#encapsulation dotlq 10
+Router (config-subif)#ip address 192.168.10.1 255.255.255.0
+Router (config-subif)#exit
+Router (config)#
+Router (config)#interface g0/0.20
+(config-subif)#encapsulation dot1q 20 Router
+Router (config-subif)#ip address 192.168.20.1 255.255.255.0
+Router (config-subif)#exit
+Router (config)#
+Router (config)#interface g0/0.30
+Router (config-subif)#encapsulation dot1q 30
+Router (config-subif)#ip address 192.168.30.1 255.255.255.0
+Router (config-subif)#exit
+Router (config)#
+Router (config)#interface g0/0.40
+Router (config-subif)#encapsulation dot1q 40
+Router (config-subif)#ip address 192.168.40.1 255.255.255.0
+Router (config-subif)#exit
+Router (config)#
+Router(config)#interface g0/0
+Router (config-if)#no shut
