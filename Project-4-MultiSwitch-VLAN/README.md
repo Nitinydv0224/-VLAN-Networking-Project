@@ -67,4 +67,4 @@ Different VLAN = communication restricted (without a router)
 
 ❌ Inter-VLAN communication restricted
 
-🌐 Network securely divided into 3 VLANs (Sales, Accounts, HR)
+🌐 Network securely divided into 3 VLANs (Sales, IT, Accounts)
