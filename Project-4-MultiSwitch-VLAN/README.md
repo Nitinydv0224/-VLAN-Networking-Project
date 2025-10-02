@@ -1,4 +1,4 @@
-                                                         🌐 Multi-Switch VLAN Communication
+                            🌐 Multi-Switch VLAN Communication
 📘 Project Overview
 
 This project demonstrates how multiple switches can be connected together using VLANs (Virtual Local Area Networks) to logically divide a large network. Even though all devices are physically connected through 5 switches, VLANs separate the network into logical groups, improving security and management. A 
