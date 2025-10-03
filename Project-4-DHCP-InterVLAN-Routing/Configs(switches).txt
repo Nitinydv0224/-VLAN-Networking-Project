@@ -1,0 +1,189 @@
+---------- SWITCH 1 CONFIGURATION ----------
+
+Switch>en
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10 
+Switch(config-vlan)#name Sales 
+Switch(config-vlan)#vlan 20 
+Switch(config-vlan)#name IT
+Switch(config-vlan)#vlan 30 
+Switch(config-vlan)#name Accounts 
+Switch(config-vlan)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/1-2
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/3-4
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/5-6
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 30
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface fa0/24
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to up
+
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 10,20,30 
+Switch(config-if)#exit
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory 
+Building configuration...
+[OK]
+
+
+---------- SWITCH 2 CONFIGURATION ----------
+
+Switch>en
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#vlan 10 
+Switch(config-vlan)#name Sales 
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name IT 
+Switch(config-vlan)#vlan 30 
+Switch(config-vlan)#name Accounts 
+Switch(config-vlan)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/1-2
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 10 
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#interface range fa0/3-4
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#interface range fa0/5-6
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 30
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#interface fa0/24
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#interface fa0/23 
+Switch(config-if)#switchport mode trunk 
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to up
+
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory 
+Building configuration...
+[OK]
+
+---------- SWITCH 3 CONFIGURATION ----------
+
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#interface fa0/23 
+Switch(config-if)#switchport mode trunk 
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to up
+
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory 
+Building configuration...
+[OK]
+
+---------- SWITCH 4 CONFIGURATION ----------
+
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#interface fa0/23 
+Switch(config-if)#switchport mode trunk 
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/23, changed state to up
+
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit 
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory 
+Building configuration...
+[OK]
+
+---------- SWITCH 5 CONFIGURATION ----------
+
+Switch>en
+Switch#config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10 
+Switch(config-vlan)#name Sales
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name It
+Switch(config-vlan)#
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name IT
+Switch(config-vlan)#vlan 30
+Switch(config-vlan)#name Accounts 
+Switch(config-vlan)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/1-2
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#interface range fa0/3-4
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#interface range fa0/5-6
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 30
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface fa0/24
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30 
+Switch(config-if)#exit
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory 
+Building configuration...
+[OK]
+
+----------- Switch and Router configuration --------------
+
+Switch(config)# interface fa0/24
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk encapsulation dot1q
