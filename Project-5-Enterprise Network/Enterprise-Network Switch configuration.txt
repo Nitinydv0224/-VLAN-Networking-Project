@@ -1,0 +1,53 @@
+---------- Switch 1 configuration ------------
+
+Switch>en
+Switch#config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10 
+Switch(config-vlan)#name HR 
+Switch(config-vlan)#vlan 20 
+Switch(config-vlan)#name IT 
+Switch(config-vlan)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/1-2
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 10 
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/3-4
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface fa0/24 
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#exit 
+
+
+
+---------------- Switch 2 configuration -------------
+
+Switch>en
+Switch#config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 30
+Switch(config-vlan)#name Accounts 
+Switch(config-vlan)#vlan 40 
+Switch(config-vlan)#name Sales 
+Switch(config-vlan)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/1-2 
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 30 
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface range fa0/3-4 
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 40 
+Switch(config-if-range)#
+Switch(config-if-range)#exit 
+Switch(config)#
+Switch(config)#interface fa0/24 
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#exit 
+
